@@ -50,23 +50,19 @@
         <source-file src="src/android/AnalyticsPlugin.java" target-dir="src/com/segment/analytics/cordova"/>
     </platform>
 
-    <dependency id="cordova-plugin-cocoapod-support" />
-
     <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="AnalyticsPlugin">
-                <param name="ios-package" value="AnalyticsPlugin" />
-                <param name="onload" value="true"/>
-            </feature>
-            <preference name="analytics_write_key"/>
-            <preference name="analytics_debug_write_key"/>
-        </config-file>
+      <config-file target="config.xml" parent="/*">
+          <feature name="AnalyticsPlugin">
+              <param name="ios-package" value="AnalyticsPlugin" />
+              <param name="onload" value="true"/>
+          </feature>
+          <preference name="analytics_write_key"/>
+          <preference name="analytics_debug_write_key"/>
+      </config-file>
 
-        <header-file src="src/ios/AnalyticsPlugin.h" />
-        <source-file src="src/ios/AnalyticsPlugin.m" />
-        <pods-config ios-min-version="8.0" use-frameworks="true">
-        </pods-config>
-        <pod id="Analytics" version="3.5.5" />
+      <header-file src="src/ios/AnalyticsPlugin.h" />
+      <source-file src="src/ios/AnalyticsPlugin.m" />
+      <framework src="Analytics" type="podspec" spec="3.5.5" />
     </platform>
 
 </plugin>
